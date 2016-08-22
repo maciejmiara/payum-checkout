@@ -2,17 +2,17 @@
 
 namespace MaciejMiara\Payum\Checkout;
 
-use Payum\Skeleton\Action\AuthorizeAction;
-use Payum\Skeleton\Action\CancelAction;
-use Payum\Skeleton\Action\ConvertPaymentAction;
-use Payum\Skeleton\Action\CaptureAction;
-use Payum\Skeleton\Action\NotifyAction;
-use Payum\Skeleton\Action\RefundAction;
-use Payum\Skeleton\Action\StatusAction;
+use MaciejMiara\Payum\Checkout\Action\AuthorizeAction;
+use MaciejMiara\Payum\Checkout\Action\CancelAction;
+use MaciejMiara\Payum\Checkout\Action\ConvertPaymentAction;
+use MaciejMiara\Payum\Checkout\Action\CaptureAction;
+use MaciejMiara\Payum\Checkout\Action\NotifyAction;
+use MaciejMiara\Payum\Checkout\Action\RefundAction;
+use MaciejMiara\Payum\Checkout\Action\StatusAction;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\GatewayFactory;
 
-class SkeletonGatewayFactory extends GatewayFactory
+class CheckoutGatewayFactory extends GatewayFactory
 {
     /**
      * {@inheritDoc}
@@ -20,8 +20,8 @@ class SkeletonGatewayFactory extends GatewayFactory
     protected function populateConfig(ArrayObject $config)
     {
         $config->defaults([
-            'payum.factory_name' => 'skeleton',
-            'payum.factory_title' => 'skeleton',
+            'payum.factory_name' => 'checkout',
+            'payum.factory_title' => 'checkout',
             'payum.action.capture' => new CaptureAction(),
             'payum.action.authorize' => new AuthorizeAction(),
             'payum.action.refund' => new RefundAction(),
@@ -36,7 +36,7 @@ class SkeletonGatewayFactory extends GatewayFactory
                 'sandbox' => true,
             );
             $config->defaults($config['payum.default_options']);
-            $config['payum.required_options'] = [];
+            $config['payum.required_options'] = ['sandbox', 'merchant_secret'];
 
             $config['payum.api'] = function (ArrayObject $config) {
                 $config->validateNotEmpty($config['payum.required_options']);

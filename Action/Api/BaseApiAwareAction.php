@@ -5,7 +5,7 @@ namespace MaciejMiara\Payum\Checkout\Action\Api;
 use Payum\Core\Action\ActionInterface;
 use Payum\Core\ApiAwareInterface;
 use Payum\Core\Exception\UnsupportedApiException;
-use Payum\Skeleton\Api;
+use MaciejMiara\Payum\Checkout\Api;
 
 abstract class BaseApiAwareAction implements ActionInterface, ApiAwareInterface
 {

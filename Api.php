@@ -44,9 +44,11 @@ class Api
      */
     protected function doRequest($method, array $fields)
     {
-        $headers = [];
+        $headers = [
+            'Authorization' => $this->options['merchant_secret']
+        ];
 
-        $request = $this->messageFactory->createRequest($method, $this->getApiEndpoint(), $headers, http_build_query($fields));
+        $request = $this->messageFactory->createRequest($method, $this->getApiEndpoint(), $headers, json_encode($fields));
 
         $response = $this->client->send($request);
 
@@ -62,6 +64,6 @@ class Api
      */
     protected function getApiEndpoint()
     {
-        return $this->options['sandbox'] ? 'http://sandbox.example.com' : 'http://example.com';
+        return $this->options['sandbox'] ? 'https://sandbox.checkout.com/api2/v2' : 'https://api2.checkout.com/v2';
     }
 }
