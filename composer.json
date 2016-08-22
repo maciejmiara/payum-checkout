@@ -30,7 +30,7 @@
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-0": { "Payum\\Skeleton": "" }
+        "psr-0": { "MaciejMiara\\Payum\\Checkout": "" }
     },
     "target-dir": "Payum/Skeleton",
     "extra": {
