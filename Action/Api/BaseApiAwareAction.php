@@ -1,5 +1,6 @@
 <?php
-namespace Payum\Skeleton\Action\Api;
+
+namespace MaciejMiara\Payum\Checkout\Action\Api;
 
 use Payum\Core\Action\ActionInterface;
 use Payum\Core\ApiAwareInterface;

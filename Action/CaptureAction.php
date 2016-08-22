@@ -1,5 +1,6 @@
 <?php
-namespace Payum\Skeleton\Action;
+
+namespace MaciejMiara\Payum\Checkout\Action;
 
 use Payum\Core\Action\GatewayAwareAction;
 use Payum\Core\Bridge\Spl\ArrayObject;

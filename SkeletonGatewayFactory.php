@@ -1,5 +1,6 @@
 <?php
-namespace Payum\Skeleton;
+
+namespace MaciejMiara\Payum\Checkout;
 
 use Payum\Skeleton\Action\AuthorizeAction;
 use Payum\Skeleton\Action\CancelAction;

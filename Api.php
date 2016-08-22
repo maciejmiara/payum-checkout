@@ -1,5 +1,6 @@
 <?php
-namespace Payum\Skeleton;
+
+namespace MaciejMiara\Payum\Checkout;
 
 use Http\Message\MessageFactory;
 use Payum\Core\Exception\Http\HttpException;
